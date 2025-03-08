@@ -108,14 +108,21 @@
             const randomMiddle = middles[Math.floor(Math.random() * middles.length)];
             const randomEnding = endings[Math.floor(Math.random() * endings.length)];
             document.getElementById('news').innerText = `${randomBeginning} ${randomMiddle} ${randomEnding}`;
+        
+            setRandomImage(); // Update the image on every click
         }
 
         function setRandomImage() {
-            const randomImageIndex = Math.floor(Math.random() * 21); // Images from photo_0.png to photo_20.png
-            const imageElement = document.createElement("img");
+            const randomImageIndex = Math.floor(Math.random() * 34); // Images from photo_0.png to photo_33.png
+            let imageElement = document.getElementById("footer-image");
+        
+            if (!imageElement) {
+                imageElement = document.createElement("img");
+                imageElement.id = "footer-image";
+                document.body.appendChild(imageElement);
+            }
+        
             imageElement.src = `img/photo_${randomImageIndex}.png`;
-            imageElement.id = "footer-image";
-            document.body.appendChild(imageElement);
         }
         
         window.onload = setRandomImage;
