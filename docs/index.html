@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trump Catastrophic News Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #news {
+            font-size: 1.5em;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #000;
+            display: inline-block;
+            background-color: #f8f8f8;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trump Catastrophic News Generator</h1>
+    <div id="news">Click the button to generate news!</div><br>
+    <button onclick="generateNews()">Generate News</button>
+    
+    <script>
+        const beginnings = [
+            "Trump accidentally",
+            "Donald Trump mistakenly",
+            "Trump officially",
+            "White House insider reveals Trump",
+            "Breaking: Trump",
+            "Mar-a-Lago sources confirm that Trump"
+        ];
+        
+        const middles = [
+            "signs an executive order to",
+            "tweets an official statement claiming to",
+            "announces plans to",
+            "declares himself",
+            "publicly admits to",
+            "demands Congress to"
+        ];
+        
+        const endings = [
+            "ban all mirrors from government buildings.",
+            "replace the Statue of Liberty with a golden Trump Tower.",
+            "make golf an Olympic sport.",
+            "install his face on Mount Rushmore.",
+            "outlaw all books containing more than 100 pages.",
+            "declare ketchup a vegetable."
+        ];
+
+        function generateNews() {
+            const randomBeginning = beginnings[Math.floor(Math.random() * beginnings.length)];
+            const randomMiddle = middles[Math.floor(Math.random() * middles.length)];
+            const randomEnding = endings[Math.floor(Math.random() * endings.length)];
+            document.getElementById('news').innerText = `${randomBeginning} ${randomMiddle} ${randomEnding}`;
+        }
+    </script>
+</body>
+</html>
