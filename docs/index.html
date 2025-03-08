@@ -113,7 +113,7 @@
         function setRandomImage() {
             const randomImageIndex = Math.floor(Math.random() * 21); // Images from photo_0.png to photo_20.png
             const imageElement = document.createElement("img");
-            imageElement.src = `photo_${randomImageIndex}.png`;
+            imageElement.src = `img/photo_${randomImageIndex}.png`;
             imageElement.id = "footer-image";
             document.body.appendChild(imageElement);
         }
